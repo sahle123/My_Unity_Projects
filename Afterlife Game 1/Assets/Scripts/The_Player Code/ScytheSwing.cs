@@ -1,0 +1,57 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class ScytheSwing : MonoBehaviour {
+	
+	public AudioClip SoundFx; 	// SFX for the scythe swing.
+	public GameObject BlueSoul; // The object the current object will transform into when the scythe connects with the target.
+	public int ArraySize;		// Array size for all the different sound clips.
+	public AudioClip[] RedSoulDeath; // The different death SFX for destroyed object.
+
+	private int RedSoulSFXCount = 0;	// Count for which death SFX to use.
+	private BoxCollider BoxComponent; 	// For caching GetComponent.
+
+
+	// Caching all the GetComponent<T> calls
+	void Start()
+	{
+		BoxComponent = gameObject.GetComponent<BoxCollider> (); 
+	}
+
+	// Handler for killing Angry Souls
+	void OnTriggerEnter(Collider theTrigger)
+	{
+		if(theTrigger.gameObject.name == "Angry_Soul")
+		{
+			Destroy (theTrigger.gameObject);
+			Instantiate (BlueSoul, theTrigger.transform.position, Quaternion.identity);
+
+			// To play different sound effects for soul upon death.
+			audio.PlayOneShot (RedSoulDeath[RedSoulSFXCount], 1f);
+			RedSoulSFXCount = (RedSoulSFXCount + 1) % ArraySize;
+			//Debug.Log ("I played: " + RedSoulDeath[RedSoulSFXCount].name);
+		}
+	}
+
+	// Scythe Swing animation and triggers
+	void Update()
+	{
+		if(Input.GetMouseButtonDown (0))
+		{
+			if(!animation.isPlaying)
+			{
+				animation.Play("Scythe_Animation 3");
+				audio.PlayOneShot(SoundFx, 0.5f);
+				//gameObject.GetComponent<BoxCollider>().enabled = true;
+				BoxComponent.enabled = true;
+			}
+		}
+		else if(!animation.isPlaying)
+		{
+			BoxComponent.enabled = false;
+			//gameObject.GetComponent<BoxCollider>().enabled = false;
+		}
+	}
+
+
+}
