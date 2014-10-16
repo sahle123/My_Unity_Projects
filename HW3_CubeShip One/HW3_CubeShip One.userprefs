@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../Playbox/Assets/Scripts/LayersAndTags.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Transform_movement.cs">
     <Files>
       <File FileName="../Playbox/Assets/Scripts/LayersAndTags.cs" Line="9" Column="125" />
+      <File FileName="Assets/Scripts/Transform_movement.cs" Line="28" Column="7" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

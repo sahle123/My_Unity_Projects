@@ -5,7 +5,7 @@ public class ActivateSwtichBasic : MonoBehaviour {
 
 	public AudioClip SoundFx;
 	
-	private bool is_opening = false;
+	private bool is_opening = false; // A bool to make sure the animation will only run once.
 	
 	void OnTriggerEnter(Collider theTrigger)
 	{

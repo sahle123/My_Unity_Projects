@@ -5,6 +5,7 @@
 // Thank you, Peter G from UnityAnswers.
 
 public var flashColor : Color;
+public var pauseColor : Color;
 public var FlashDuration : float = 0.3f;
 private var flash : GUITexture;
 
@@ -26,12 +27,20 @@ function Start () {
 
 function Flash (duration : float) 
 {
+	flash.color = flashColor;
 	flash.enabled = true;
 	Invoke("Cancel", duration);
 }
 
 function KeepRed()
 {
+	flash.color = flashColor;
+	flash.enabled = true;
+}
+
+function Pause()
+{
+	flash.color = pauseColor;
 	flash.enabled = true;
 }
 
@@ -42,7 +51,7 @@ function Cancel ()
 
 function OnTriggerEnter (theTrigger : Collider)
 {
-	if(theTrigger.gameObject.name == "Angry_Soul")
+	if((theTrigger.gameObject.name == "Angry_Soul") || (theTrigger.gameObject.name == "Angry_Soul_2"))
 	{
 		Flash(FlashDuration);
 	}

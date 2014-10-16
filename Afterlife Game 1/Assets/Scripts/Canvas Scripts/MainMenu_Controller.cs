@@ -31,7 +31,7 @@ public class MainMenu_Controller : MonoBehaviour {
 		}
 		if(etime >= timeLimit)
 		{
-			Application.LoadLevel ("Tutorial Scene");
+			Application.LoadLevel ("First Level");
 		}
 	}
 }

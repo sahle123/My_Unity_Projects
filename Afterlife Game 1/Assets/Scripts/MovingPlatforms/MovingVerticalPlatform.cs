@@ -5,6 +5,7 @@ public class MovingVerticalPlatform : MonoBehaviour {
 
 	public float Dist = 3f;
 	public bool offset = false;
+	public bool inverted = false;
 	public float delayTime = 0f;
 	
 	private float etime = 0f;
@@ -16,6 +17,11 @@ public class MovingVerticalPlatform : MonoBehaviour {
 	{
 		if(offset)
 			change_dir = -change_dir;
+		if(inverted)
+		{
+			platform_dir = Dist;
+			change_dir = -change_dir;
+		}
 	}
 	
 	void FixedUpdate()

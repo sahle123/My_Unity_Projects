@@ -21,7 +21,7 @@ public class ScytheSwing : MonoBehaviour {
 	// Handler for killing Angry Souls
 	void OnTriggerEnter(Collider theTrigger)
 	{
-		if(theTrigger.gameObject.name == "Angry_Soul")
+		if((theTrigger.gameObject.tag == "Angry_Soul"))
 		{
 			Destroy (theTrigger.gameObject);
 			Instantiate (BlueSoul, theTrigger.transform.position, Quaternion.identity);
@@ -30,6 +30,20 @@ public class ScytheSwing : MonoBehaviour {
 			audio.PlayOneShot (RedSoulDeath[RedSoulSFXCount], 1f);
 			RedSoulSFXCount = (RedSoulSFXCount + 1) % ArraySize;
 			//Debug.Log ("I played: " + RedSoulDeath[RedSoulSFXCount].name);
+		}
+
+		// Special case: Angry Souls that are triggers
+		if (theTrigger.gameObject.tag == "Angry_Soul_Trigger")
+		{
+			// Can be found in ActivateSwitchPlatform.cs
+			ActivateSwitchPlatform.isAngrySoulDead = true;
+
+			Destroy (theTrigger.gameObject);
+			Instantiate (BlueSoul, theTrigger.transform.position, Quaternion.identity);
+
+			// To play different sound effects for soul upon death.
+			audio.PlayOneShot (RedSoulDeath[RedSoulSFXCount], 1f);
+			RedSoulSFXCount = (RedSoulSFXCount + 1) % ArraySize;
 		}
 	}
 

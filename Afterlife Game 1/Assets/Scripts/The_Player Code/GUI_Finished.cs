@@ -12,40 +12,51 @@ using System.Collections;
 
 public class GUI_Finished : MonoBehaviour {
 
-	static public bool isDead = false;
+	static public bool isDead;		// Is the player still alive?
+	static public bool reachedPot;	// Has the player reached the victory pot?
+	static public bool metQuota;	// Has the player gathered enough souls?
 
 	public int score = 0;
 	public int IncrementRate = 5;
 	public int DecrementRate = 10;
 	public int MegaSoulRate = 25;
 	public int SoulQuotaForLevel = 10;
+	public int Health = 3;
 
 	public bool StartWithScythe = false;
 	
 	public Texture2D BlueSoulIcon;
 	public Texture2D ScytheIcon;
+	public Texture2D HeartIcon;
 	public AudioClip BlueSoulSoundFx;
 	public AudioClip AngrySoulSoundFx;
 	public AudioClip ScytheSoundFX;
 	public GUIStyle MyStyle;
 
 	private int AcquiredSouls = 0;
-	private bool playerWon = false;
 
 	// All the GetComponents local variables (For performance boost)
 	private ScytheSwing isScythe; 	// Will be used in conjunction with .enabled. i.e. isScythe.enabled = true;
 	private MouseLook isMouseLook;	// Same principle as isScythe.
-	private MouseLook isChildMouseLook; // Ibid.
-	
+	private MouseLook isChildMouseLook; 	// Ibid.
+	private MeshRenderer isRenderScythe; 	// Ibid.
+
+	// Initialize all public statics
 	// Make sure the Camera is working
 	// Do we start with Scythe?
 	// Cache all GetComponent calls.
 	void Start()
 	{
+		// Initialize public statics
+		metQuota = false;
+		isDead = false;
+		reachedPot = false;
+
 		// Caching GetComponent calls
 		isScythe = transform.FindChild ("Scythe_Blade_Origin").GetComponent<ScytheSwing>();
 		isMouseLook = gameObject.GetComponent<MouseLook>();
 		isChildMouseLook = transform.FindChild ("Main Camera").GetComponent<MouseLook>();
+		isRenderScythe = transform.FindChild ("Scythe_Blade_Origin").FindChild ("Scythe_Blade").FindChild ("default").GetComponent<MeshRenderer> ();
 
 
 		// Make Sure we have cameras working and player can move
@@ -55,9 +66,15 @@ public class GUI_Finished : MonoBehaviour {
 
 		// Start with Scythe?
 		if(!StartWithScythe)
+		{
 			isScythe.enabled = false;
+			isRenderScythe.enabled = false;
+		}
 		else
+		{
 			isScythe.enabled = true;
+			isRenderScythe.enabled = true;
+		}
 	}
 
 	//--------------------------------------------------------------
@@ -79,15 +96,28 @@ public class GUI_Finished : MonoBehaviour {
 		if(StartWithScythe)
 			GUI.Box (new Rect (15, 100, 40, 60), ScytheIcon);
 
+		// Display remaining hearts
+		int health_icon_offset = 45;
+		int offset = 120;
+		for(int i = 0; i < Health; ++i)
+		{
+			GUI.Box ( new Rect (offset, 10, 40, 30), HeartIcon);
+			offset += health_icon_offset;
+		}
+
 		// Pause Screen GUI
 		if((Time.timeScale == 0) && (!isDead))
 		{
+			gameObject.SendMessage ("Pause");// Accesses Pause() in RedScreenFlash.js
+
 			if(GUI.Button( new Rect (Screen.width/2 - 50, Screen.height/2 - 55, 100, 50), "Resume"))
 			{
 				Debug.Log ("Resuming Game...");
 				Time.timeScale = 1;
 				isMouseLook.enabled = true;
 				isChildMouseLook.enabled = true;
+
+				gameObject.SendMessage ("Cancel"); // Accesses Cancel() in RedScreenFlash.js
 			}
 			if(GUI.Button( new Rect (Screen.width/2 - 50, Screen.height/2, 100, 50), "Exit"))
 			{
@@ -96,6 +126,8 @@ public class GUI_Finished : MonoBehaviour {
 				Time.timeScale = 1;
 				isMouseLook.enabled = true;
 				isChildMouseLook.enabled = true;
+
+				gameObject.SendMessage ("Cancel"); // Accesses Cancel() in RedScreenFlash.js
 			}
 		}
 
@@ -114,15 +146,16 @@ public class GUI_Finished : MonoBehaviour {
 
 		}
 
-		// If the player has reached the victory pot.
-		if(playerWon)
+		// If the player has reached the victory pot and has enough souls.
+		if((metQuota)&&(reachedPot))
 		{
 			GUI.Label (new Rect (Screen.width/2 - 35, Screen.height/2 - 55, 120, 60), "You won!!!");
 
-			if(GUI.Button (new Rect (Screen.width/2 - 50, Screen.height/2, 100, 50), "Next Level"))
+			if(GUI.Button (new Rect (Screen.width/2 - 50, Screen.height/2, 100, 50), "Title Screen"))
 			{
 				Debug.Log ("Going to next level...");
-				playerWon = false;
+				AcquiredSouls = 0;
+				Application.LoadLevel ("Title Screen");
 			}
 		}
 	}
@@ -131,31 +164,36 @@ public class GUI_Finished : MonoBehaviour {
 	// Update
 	//--------------------------------------------------------------
 	// Checks if the pause button was pressed. (ESC key)
+	// Checks if player has acquired enough souls.
 	void Update()
 	{
 		// Pause function
 		if(Input.GetKeyUp(KeyCode.Escape))
 		{
-			if(Time.timeScale == 0)
-			{
-				Time.timeScale = 1;
-				isMouseLook.enabled = true;
-				isChildMouseLook.enabled = true;
-			}
-			else
+			if(Time.timeScale == 1)
 			{
 				Time.timeScale = 0;
 				isMouseLook.enabled = false;
 				isChildMouseLook.enabled = false;
 			}
+
+			// Unpause with ESC key.
+			/*else
+			{
+				Time.timeScale = 1;
+				isMouseLook.enabled = true;
+				isChildMouseLook.enabled = true;
+			}*/
 		}
+		if(AcquiredSouls == SoulQuotaForLevel)
+			metQuota = true;
 	}
 
 	//--------------------------------------------------------------
 	// Triggers
 	//--------------------------------------------------------------
 	// Trigger for despawning souls and giving points.
-	// Trigger for finishing level.
+	// Trigger for taking damage from angry souls
 	// Trigger for grabbing scythe.
 	void OnTriggerEnter (Collider theTrigger)
 	{
@@ -180,6 +218,19 @@ public class GUI_Finished : MonoBehaviour {
 			
 			AudioSource.PlayClipAtPoint (AngrySoulSoundFx, theTrigger.transform.position, 0.5f);
 		}
+
+		// Angry Soul that damages player
+		else if (theTrigger.gameObject.name == "Angry_Soul_2")
+		{
+			score = score - DecrementRate;
+
+			AudioSource.PlayClipAtPoint (AngrySoulSoundFx, theTrigger.transform.position, 0.5f);
+
+			--Health;
+
+			if(Health <= 0)
+				isDead = true;
+		}
 		
 		// Mega soul handler
 		else if (theTrigger.gameObject.name == "Mega_Soul")
@@ -197,10 +248,13 @@ public class GUI_Finished : MonoBehaviour {
 			audio.PlayOneShot (ScytheSoundFX, 0.8f);
 			isScythe.enabled = true;
 			StartWithScythe = true;
+			isRenderScythe.enabled = true;
 		}
 
+		/*
 		// Did we reach the victory pot? i.e. beat the level.
 		if(theTrigger.gameObject.name == "Victory_Pot")
 			playerWon = true;
+		*/
 	}
 }
