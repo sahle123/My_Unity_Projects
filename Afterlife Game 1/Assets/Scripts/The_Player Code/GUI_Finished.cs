@@ -8,6 +8,8 @@ using System.Collections;
  * collecting and despawning souls, gathering
  * points, and trigger with victory pot
  * is found in here.
+ * 
+ * Manages turning off and on the High Score Screen
  */
 
 public class GUI_Finished : MonoBehaviour {
@@ -15,8 +17,8 @@ public class GUI_Finished : MonoBehaviour {
 	static public bool isDead;		// Is the player still alive?
 	static public bool reachedPot;	// Has the player reached the victory pot?
 	static public bool metQuota;	// Has the player gathered enough souls?
+	static public int score = 0;	// The players score.
 
-	public int score = 0;
 	public int IncrementRate = 5;
 	public int DecrementRate = 10;
 	public int MegaSoulRate = 25;
@@ -31,7 +33,9 @@ public class GUI_Finished : MonoBehaviour {
 	public AudioClip BlueSoulSoundFx;
 	public AudioClip AngrySoulSoundFx;
 	public AudioClip ScytheSoundFX;
+	public AudioClip WalkingSound;
 	public GUIStyle MyStyle;
+	public GameObject HighScoreCanvas;
 
 	private int AcquiredSouls = 0;
 
@@ -40,6 +44,8 @@ public class GUI_Finished : MonoBehaviour {
 	private MouseLook isMouseLook;	// Same principle as isScythe.
 	private MouseLook isChildMouseLook; 	// Ibid.
 	private MeshRenderer isRenderScythe; 	// Ibid.
+	
+	//private bool walking = false; // For walking animation soundfx
 
 	// Initialize all public statics
 	// Make sure the Camera is working
@@ -63,6 +69,7 @@ public class GUI_Finished : MonoBehaviour {
 		isMouseLook.enabled = true;
 		isChildMouseLook.enabled = true;
 		gameObject.GetComponent<CharacterMotor>().enabled = true;
+		HighScoreCanvas.GetComponent<Canvas>().enabled = false;
 
 		// Start with Scythe?
 		if(!StartWithScythe)
@@ -80,7 +87,7 @@ public class GUI_Finished : MonoBehaviour {
 	//--------------------------------------------------------------
 	// GUI
 	//--------------------------------------------------------------
-	// Pause Screen; Game Over Screen; In-game GUI
+	// Pause Screen; Game Over Screen; In-game GUI; Highscore screen
 	void OnGUI()
 	{
 		// Score Counter
@@ -149,6 +156,9 @@ public class GUI_Finished : MonoBehaviour {
 		// If the player has reached the victory pot and has enough souls.
 		if((metQuota)&&(reachedPot))
 		{
+			HighScoreCanvas.GetComponent<Canvas>().enabled = true;
+
+			/*
 			GUI.Label (new Rect (Screen.width/2 - 35, Screen.height/2 - 55, 120, 60), "You won!!!");
 
 			if(GUI.Button (new Rect (Screen.width/2 - 50, Screen.height/2, 100, 50), "Title Screen"))
@@ -156,7 +166,7 @@ public class GUI_Finished : MonoBehaviour {
 				Debug.Log ("Going to next level...");
 				AcquiredSouls = 0;
 				Application.LoadLevel ("Title Screen");
-			}
+			}*/
 		}
 	}
 
@@ -165,6 +175,7 @@ public class GUI_Finished : MonoBehaviour {
 	//--------------------------------------------------------------
 	// Checks if the pause button was pressed. (ESC key)
 	// Checks if player has acquired enough souls.
+	// Walking soundfx
 	void Update()
 	{
 		// Pause function
@@ -178,15 +189,36 @@ public class GUI_Finished : MonoBehaviour {
 			}
 
 			// Unpause with ESC key.
-			/*else
+			else
 			{
 				Time.timeScale = 1;
 				isMouseLook.enabled = true;
 				isChildMouseLook.enabled = true;
-			}*/
+				gameObject.SendMessage ("Cancel"); // Accesses Cancel() in RedScreenFlash.js
+			}
 		}
+
+		// Check if we got enough souls.
 		if(AcquiredSouls == SoulQuotaForLevel)
 			metQuota = true;
+
+		// Walking sound
+		/*
+		if((Input.GetAxis ("Vertical") != 0) || (Input.GetAxis ("Horizontal") != 0))
+		{
+			if(!walking)
+			{
+				audio.loop = true;
+				audio.clip = WalkingSound;
+				audio.Play();
+				walking = true;
+			}
+		}
+		else
+		{
+			audio.Stop ();
+			walking = false;
+		}*/
 	}
 
 	//--------------------------------------------------------------

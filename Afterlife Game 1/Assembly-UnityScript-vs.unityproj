@@ -48,8 +48,6 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\AntiAliasing.js" />
      <Compile Include="Assets\Scripts\The_Player Code\RedScreenFlash.js" />
-     <None Include="Assets\Standard Assets\Water (Pro Only)\Water3\Sources\Shaders\FX-Water3.shader" />
-     <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
      <None Include="Assets\Prefabs\torch\readme.txt" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>/Users/NomadHome/Unity/Afterlife Game 1/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>

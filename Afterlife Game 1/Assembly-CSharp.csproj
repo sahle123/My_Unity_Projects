@@ -54,6 +54,8 @@
      <Compile Include="Assets\Scripts\ArchGate Code\ManualMovingGate.cs" />
      <Compile Include="Assets\Scripts\ArchGate Code\MovingGate.cs" />
      <Compile Include="Assets\Scripts\ArchGate Code\RotatingHandle.cs" />
+     <Compile Include="Assets\Scripts\Canvas Scripts\GetScore.cs" />
+     <Compile Include="Assets\Scripts\Canvas Scripts\High_Score_Handler.cs" />
      <Compile Include="Assets\Scripts\Canvas Scripts\MainMenu_Controller.cs" />
      <Compile Include="Assets\Scripts\MovingPlatforms\MovingPlatform.cs" />
      <Compile Include="Assets\Scripts\MovingPlatforms\MovingVerticalPlatform.cs" />
@@ -69,9 +71,8 @@
      <Compile Include="Assets\Scripts\Triggers\BlackPitDeathTrigger.cs" />
      <Compile Include="Assets\Scripts\Triggers\ScythePowerUp.cs" />
      <Compile Include="Assets\Scripts\Triggers\VictoryPotHandler.cs" />
+     <Compile Include="Assets\Scripts\Triggers\VictoryPotHandler2.cs" />
      <Compile Include="Assets\Scripts\WatchPlayer.cs" />
-     <None Include="Assets\Standard Assets\Water (Pro Only)\Water3\Sources\Shaders\FX-Water3.shader" />
-     <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
      <None Include="Assets\Prefabs\torch\readme.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>

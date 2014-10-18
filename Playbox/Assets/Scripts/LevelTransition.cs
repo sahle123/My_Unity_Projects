@@ -3,13 +3,17 @@ using System.Collections;
 
 public class LevelTransition : MonoBehaviour {
 
+	public int myValue = 30;
+
 	public void Awake()
 	{
+
 		DontDestroyOnLoad(this);
 		
 		if (FindObjectsOfType(GetType()).Length > 1)
 		{
 			Destroy(gameObject);
+			//Debug.Log ("My value is now: " + myValue);
 		}
 	}
 
@@ -35,6 +39,16 @@ public class LevelTransition : MonoBehaviour {
 			{
 				Debug.Log ("I think something went wrong...");
 			}
+		}
+		// When users presses the A key.
+		if(Input.GetKeyUp(KeyCode.A))
+		{
+			myValue = 50;
+			Debug.Log ("My value is set to: " + myValue);
+		}
+		if(Input.GetKeyUp(KeyCode.S))
+		{
+			Debug.Log ("My value is now: " + myValue);
 		}
 	}
 
