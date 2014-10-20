@@ -33,9 +33,10 @@ public class GUI_Finished : MonoBehaviour {
 	public AudioClip BlueSoulSoundFx;
 	public AudioClip AngrySoulSoundFx;
 	public AudioClip ScytheSoundFX;
-	public AudioClip WalkingSound;
+	public AudioClip BackgroundMusic;
 	public GUIStyle MyStyle;
 	public GameObject HighScoreCanvas;
+	//public AudioClip WalkingSound;
 
 	private int AcquiredSouls = 0;
 
@@ -53,6 +54,9 @@ public class GUI_Finished : MonoBehaviour {
 	// Cache all GetComponent calls.
 	void Start()
 	{
+		// Initiailize score to 0.
+		score = 0;
+
 		// Initialize public statics
 		metQuota = false;
 		isDead = false;
@@ -277,10 +281,16 @@ public class GUI_Finished : MonoBehaviour {
 		// Enable Scythe Handler
 		if (theTrigger.gameObject.name == "Scythe_PowerUp")
 		{
-			audio.PlayOneShot (ScytheSoundFX, 0.8f);
+			AudioSource.PlayClipAtPoint (ScytheSoundFX, theTrigger.transform.position, 1f);
 			isScythe.enabled = true;
 			StartWithScythe = true;
 			isRenderScythe.enabled = true;
+
+			// Look music and play background music.
+			audio.loop = true;
+			audio.volume = 0.75f;
+			audio.clip = BackgroundMusic;
+			audio.Play();
 		}
 
 		/*

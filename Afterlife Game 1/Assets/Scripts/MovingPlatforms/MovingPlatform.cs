@@ -4,8 +4,10 @@ using System.Collections;
 public class MovingPlatform : MonoBehaviour {
 
 	public float Dist = 3f;
-	public bool Offset = false;
+	public float Speed = 1f;
 	public float delayTime = 0f;
+	public float SwitchAfterTime = 3f;
+	public bool Offset = false;
 
 	private float etime = 0f;
 	private float change_dir = 1f;
@@ -20,7 +22,7 @@ public class MovingPlatform : MonoBehaviour {
 
 	void FixedUpdate()
 	{
-		if(etime > 3)
+		if(etime > SwitchAfterTime)
 		{
 			change_dir = -change_dir;
 			etime = 0f;
@@ -35,7 +37,7 @@ public class MovingPlatform : MonoBehaviour {
 		{
 			etime = etime + 0.02f;
 			
-			platform_dir = change_dir * Time.deltaTime * Dist;
+			platform_dir = change_dir * Time.deltaTime * Dist * Speed;
 			
 			//Debug.Log (etime);
 			

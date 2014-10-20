@@ -1,8 +1,9 @@
 fileFormatVersion: 2
-guid: 54743f5ca573b49419b74e55ca95d581
+guid: 9cb7691ddca5e430aa27db12bcf0978d
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Simple Heart blue
+    21300000: Dark Heart
+    21300002: Gradient Red Heart
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

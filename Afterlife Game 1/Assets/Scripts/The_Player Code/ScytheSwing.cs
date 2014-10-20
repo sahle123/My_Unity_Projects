@@ -50,7 +50,7 @@ public class ScytheSwing : MonoBehaviour {
 	// Scythe Swing animation and triggers
 	void Update()
 	{
-		if(Input.GetMouseButtonDown (0))
+		if((Input.GetMouseButtonDown (0)) || (Input.GetKeyDown (KeyCode.V)))
 		{
 			if(!animation.isPlaying)
 			{
