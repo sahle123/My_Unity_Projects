@@ -57,7 +57,7 @@ public class GUI_Finished : MonoBehaviour {
 		// Initiailize score to 0.
 		score = 0;
 
-		// Initialize the High score screen as disabled. Renabled in..........
+		// Initialize the High score screen as disabled. Renabled in onGUI after certain conditions are met.
 		HighScoreCanvas.SetActive (false);
 
 		// Initialize public statics
