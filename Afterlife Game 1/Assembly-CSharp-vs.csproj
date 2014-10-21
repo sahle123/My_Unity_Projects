@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\ArchGate Code\ManualMovingGate.cs" />
      <Compile Include="Assets\Scripts\ArchGate Code\MovingGate.cs" />
      <Compile Include="Assets\Scripts\ArchGate Code\RotatingHandle.cs" />
+     <Compile Include="Assets\Scripts\Canvas Scripts\Exposition_Handler.cs" />
      <Compile Include="Assets\Scripts\Canvas Scripts\GetScore.cs" />
      <Compile Include="Assets\Scripts\Canvas Scripts\High_Score_Handler.cs" />
      <Compile Include="Assets\Scripts\Canvas Scripts\MainMenu_Controller.cs" />

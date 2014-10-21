@@ -17,8 +17,8 @@ public class VictoryPotHandler2 : MonoBehaviour {
 		}
 		else if ((theTrigger.gameObject.tag == "The_Player")&&(!waitOnSound))
 		{
-			audio.PlayOneShot (SoundFX, 0.4f);
 			waitOnSound = true;
+			audio.PlayOneShot (SoundFX, 0.4f);
 		}
 	}
 	

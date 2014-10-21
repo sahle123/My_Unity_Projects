@@ -57,6 +57,9 @@ public class GUI_Finished : MonoBehaviour {
 		// Initiailize score to 0.
 		score = 0;
 
+		// Initialize the High score screen as disabled. Renabled in..........
+		HighScoreCanvas.SetActive (false);
+
 		// Initialize public statics
 		metQuota = false;
 		isDead = false;
@@ -160,6 +163,7 @@ public class GUI_Finished : MonoBehaviour {
 		// If the player has reached the victory pot and has enough souls.
 		if((metQuota)&&(reachedPot))
 		{
+			HighScoreCanvas.SetActive(true);
 			HighScoreCanvas.GetComponent<Canvas>().enabled = true;
 
 			/*
@@ -203,7 +207,7 @@ public class GUI_Finished : MonoBehaviour {
 		}
 
 		// Check if we got enough souls.
-		if(AcquiredSouls == SoulQuotaForLevel)
+		if(AcquiredSouls >= SoulQuotaForLevel)
 			metQuota = true;
 
 		// Walking sound
