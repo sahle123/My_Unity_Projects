@@ -78,7 +78,7 @@ public class GUI_Finished : MonoBehaviour {
 		gameObject.GetComponent<CharacterMotor>().enabled = true;
 		HighScoreCanvas.GetComponent<Canvas>().enabled = false;
 
-		// Start with Scythe?
+		// Start with Scythe? This for debugging purposes only.
 		if(!StartWithScythe)
 		{
 			isScythe.enabled = false;
@@ -145,7 +145,7 @@ public class GUI_Finished : MonoBehaviour {
 			}
 		}
 
-		// If player dies
+		// If player dies handler
 		if(isDead)
 		{
 			transform.FindChild("DeathHandler").GetComponent<DeathHandler>().enabled = true;
@@ -183,7 +183,7 @@ public class GUI_Finished : MonoBehaviour {
 	//--------------------------------------------------------------
 	// Checks if the pause button was pressed. (ESC key)
 	// Checks if player has acquired enough souls.
-	// Walking soundfx
+	// Walking soundfx (Commented out. Ran out of time D: )
 	void Update()
 	{
 		// Pause function

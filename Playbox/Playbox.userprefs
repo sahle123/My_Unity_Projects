@@ -1,12 +1,23 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/SpongeScript.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Procedural Particles/SliceParticles.cs">
     <Files>
-      <File FileName="Assets/Scripts/RobotControllerScript.cs" Line="78" Column="44" />
-      <File FileName="Assets/Scripts/MovingPlatformSimple.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Emitter.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/SpongeScript.cs" Line="13" Column="73" />
+      <File FileName="Assets/Scripts/Procedural Particles/SliceParticles.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Procedural Particles/SliceParticles.cs" Line="48" Column="16" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="Assembly-CSharp" expanded="True">
+            <Node name="Scripts" expanded="True">
+              <Node name="Procedural Particles" expanded="True">
+                <Node name="SliceParticles.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

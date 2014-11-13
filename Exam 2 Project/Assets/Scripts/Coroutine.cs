@@ -17,7 +17,7 @@ public class Coroutine : MonoBehaviour {
 		while(true)
 		{
 			print ("Hello World");
-			yield return new WaitForSeconds(waitTime);;
+			yield return new WaitForSeconds(waitTime);
 		}
 	}
 }

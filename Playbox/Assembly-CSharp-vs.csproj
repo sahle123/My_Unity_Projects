@@ -46,11 +46,13 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Dictionaries.cs" />
      <Compile Include="Assets\Scripts\Emitter.cs" />
-     <Compile Include="Assets\Scripts\HelperClass.cs" />
-     <Compile Include="Assets\Scripts\Lists.cs" />
+     <Compile Include="Assets\Scripts\Lists and Dictionaries\Dictionaries.cs" />
+     <Compile Include="Assets\Scripts\Lists and Dictionaries\HelperClass.cs" />
+     <Compile Include="Assets\Scripts\Lists and Dictionaries\Lists.cs" />
      <Compile Include="Assets\Scripts\MovingPlatformSimple.cs" />
+     <Compile Include="Assets\Scripts\Procedural Particles\PushParticles.cs" />
+     <Compile Include="Assets\Scripts\Procedural Particles\SliceParticles.cs" />
      <Compile Include="Assets\Scripts\RobotControllerScript.cs" />
      <Compile Include="Assets\Scripts\ScreenFade.cs" />
      <Compile Include="Assets\Scripts\SpongeScript.cs" />

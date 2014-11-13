@@ -1,9 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Raycasting.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../Procederal Generation/Assets/Sources/PaintVertices.js">
     <Files>
-      <File FileName="Assets/Scripts/Coroutine.cs" Line="12" Column="5" />
-      <File FileName="Assets/Scripts/Raycasting.cs" Line="23" Column="2" />
+      <File FileName="../Procederal Generation/Assets/Sources/PaintVertices.js" Line="83" Column="21" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
