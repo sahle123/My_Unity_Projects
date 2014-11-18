@@ -1,23 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Procedural Particles/SliceParticles.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Proc/ProcParticleSystem.cs">
     <Files>
+      <File FileName="Assets/Scripts/Proc/ProcParticleSystem.cs" Line="27" Column="16" />
       <File FileName="Assets/Scripts/Procedural Particles/SliceParticles.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Procedural Particles/SliceParticles.cs" Line="48" Column="16" />
+      <File FileName="Assets/Scripts/Procedural Particles/PushParticles.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Procedural Textures/ProceduralTexture.cs" Line="11" Column="6" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="Assembly-CSharp" expanded="True">
-            <Node name="Scripts" expanded="True">
-              <Node name="Procedural Particles" expanded="True">
-                <Node name="SliceParticles.cs" selected="True" />
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
