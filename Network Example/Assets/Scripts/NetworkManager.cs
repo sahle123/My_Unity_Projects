@@ -1,17 +1,45 @@
-﻿using UnityEngine;
+﻿/*
+ * 	General Notes:
+ * 	- It seems that we need Port Forwarding enabled in the router in order for MasterServer to work.
+ *
+ * 
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public class NetworkManager : MonoBehaviour {
-	
-	private const string typeName = "UniqueGameName";
-	private const string gameName = "Sal's Room";
+
+	public GameObject playerPrefab;
+	private const string typeName = "WrinkleWrumble";
+	private const string gameName = "Nomad's Room";
+	private bool isRefreshingHostList = false;
 	private HostData[] hostList;
-	
+
+	private void SpawnPlayer()
+	{
+		Network.Instantiate (playerPrefab, new Vector3 (0f, 2f, 0f), Quaternion.identity, 0);
+	}
+
+	void Update()
+	{
+		if (isRefreshingHostList && MasterServer.PollHostList().Length > 0)
+		{
+			isRefreshingHostList = false;
+			hostList = MasterServer.PollHostList();
+		}
+	}
+
 	// *** Search *** //
 	// Search for a server
 	private void RefreshHostList()
 	{
-		MasterServer.RequestHostList(typeName);
+		//MasterServer.RequestHostList(typeName);
+		if (!isRefreshingHostList)
+		{
+			isRefreshingHostList = true;
+			MasterServer.RequestHostList(typeName);
+		}
 	}
 	
 	// Once we find a server, this function will run.
@@ -31,12 +59,13 @@ public class NetworkManager : MonoBehaviour {
 	void OnConnectedToServer()
 	{
 		Debug.Log("Server Joined");
+		SpawnPlayer ();
 	}
 	
 	// *** Host *** //
 	void StartServer()
 	{
-		MasterServer.ipAddress = "127.0.0.1";
+		//MasterServer.ipAddress = "127.0.0.1";
 		Network.InitializeServer(4, 25000, !Network.HavePublicAddress());
 		MasterServer.RegisterHost(typeName, gameName);
 	}
@@ -45,8 +74,9 @@ public class NetworkManager : MonoBehaviour {
 	void OnServerInitialized()
 	{
 		Debug.Log("Server Initialized");
+		SpawnPlayer ();
 	}
-	
+
 	void OnGUI()
 	{
 		// Starting server if we have no client or server

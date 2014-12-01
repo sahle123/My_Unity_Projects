@@ -1,11 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../Playbox/Assets/Scripts/ProcParticleSystem.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../Playbox/Assets/Scripts/Other/RobotControllerScript.cs">
     <Files>
-      <File FileName="../Playbox/Assets/Scripts/ProcParticleSystem.cs" Line="27" Column="11" />
-      <File FileName="../Playbox/Assets/Scripts/Procedural Particles/SliceParticles.cs" Line="9" Column="26" />
-      <File FileName="../Playbox/Assets/Scripts/Procedural Particles/PushParticles.cs" Line="1" Column="1" />
-      <File FileName="../Playbox/Assets/Scripts/Procedural Textures/ProceduralTexture.cs" Line="11" Column="6" />
+      <File FileName="../Playbox/Assets/Scripts/Other/RobotControllerScript.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

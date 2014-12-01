@@ -46,21 +46,25 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Emitter.cs" />
+     <Compile Include="Assets\Scripts\InsideOut.cs" />
      <Compile Include="Assets\Scripts\Lists and Dictionaries\Dictionaries.cs" />
      <Compile Include="Assets\Scripts\Lists and Dictionaries\HelperClass.cs" />
      <Compile Include="Assets\Scripts\Lists and Dictionaries\Lists.cs" />
-     <Compile Include="Assets\Scripts\MovingPlatformSimple.cs" />
+     <Compile Include="Assets\Scripts\Other\Emitter.cs" />
+     <Compile Include="Assets\Scripts\Other\MovingPlatformSimple.cs" />
+     <Compile Include="Assets\Scripts\Other\RobotControllerScript.cs" />
+     <Compile Include="Assets\Scripts\Other\ScreenFade.cs" />
+     <Compile Include="Assets\Scripts\Other\SpongeScript.cs" />
      <Compile Include="Assets\Scripts\Proc\ProcParticleSystem.cs" />
      <Compile Include="Assets\Scripts\Proc\ProcTextures.cs" />
+     <Compile Include="Assets\Scripts\Procedural Meshes\ShowNormals.cs" />
      <Compile Include="Assets\Scripts\Procedural Meshes\SimpleMakeMesh.cs" />
      <Compile Include="Assets\Scripts\Procedural Meshes\SimplePlane.cs" />
+     <Compile Include="Assets\Scripts\Procedural Noise\ProceduralNoise.cs" />
      <Compile Include="Assets\Scripts\Procedural Particles\PushParticles.cs" />
      <Compile Include="Assets\Scripts\Procedural Particles\SliceParticles.cs" />
      <Compile Include="Assets\Scripts\Procedural Textures\ProceduralTexture.cs" />
-     <Compile Include="Assets\Scripts\RobotControllerScript.cs" />
-     <Compile Include="Assets\Scripts\ScreenFade.cs" />
-     <Compile Include="Assets\Scripts\SpongeScript.cs" />
+     <Compile Include="Assets\Scripts\Procedural Textures\SetVertexColor.cs" />
      <Compile Include="Assets\libnoisedotnet-86856\LibNoise\Billow.cs" />
      <Compile Include="Assets\libnoisedotnet-86856\LibNoise\Checkerboard.cs" />
      <Compile Include="Assets\libnoisedotnet-86856\LibNoise\Constant.cs" />
@@ -105,6 +109,7 @@
      <Compile Include="Assets\libnoisedotnet-86856\LibNoise\Turbulence.cs" />
      <Compile Include="Assets\libnoisedotnet-86856\LibNoise\ValueNoiseBasis.cs" />
      <Compile Include="Assets\libnoisedotnet-86856\LibNoise\Voronoi.cs" />
+     <None Include="Assets\Materials\Vertex Color.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
