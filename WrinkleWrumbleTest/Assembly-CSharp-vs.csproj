@@ -47,9 +47,10 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\BasicAniController.cs" />
-     <Compile Include="Assets\Scripts\References\IdleRunJump.cs" />
-     <Compile Include="Assets\Scripts\References\RobotControllerScript.cs" />
-     <Compile Include="Assets\Scripts\References\Translate_rotate_rigidbody.cs" />
+     <Compile Include="Assets\Scripts\ItemPickup.cs" />
+     <Compile Include="Assets\Scripts\Movement\MovingScript.cs" />
+     <Compile Include="Assets\Scripts\Movement\RotatingScript.cs" />
+     <Compile Include="Assets\Scripts\ThrowableCubeStart.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>

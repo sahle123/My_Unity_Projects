@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\Procedural Particles\PushParticles.cs" />
      <Compile Include="Assets\Scripts\Procedural Particles\SliceParticles.cs" />
      <Compile Include="Assets\Scripts\Procedural Textures\ProceduralTexture.cs" />
+     <Compile Include="Assets\Scripts\Procedural Textures\ProceduralTextureAssign.cs" />
      <Compile Include="Assets\Scripts\Procedural Textures\SetVertexColor.cs" />
      <Compile Include="Assets\libnoisedotnet-86856\LibNoise\Billow.cs" />
      <Compile Include="Assets\libnoisedotnet-86856\LibNoise\Checkerboard.cs" />

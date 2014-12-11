@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-// Scythe powerup pickup script. This goes script works hand-in-hand with GUI_Finished.cs
+// Scythe powerup pickup script. This script works hand-in-hand with GUI_Finished.cs
 public class ScythePowerUp : MonoBehaviour {
 
 	// Watch the Player

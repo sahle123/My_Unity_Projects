@@ -55,6 +55,7 @@ public class SimpleMakeMesh : MonoBehaviour {
 
 		// Creating triangle. These numbers are from the video.
 		int[] triangles = new int[6] { 0, 1, 2, 1, 3, 2 };
+		//int [] triangles = new int[6] {2, 1, 0, 2, 3, 1}; // Backwards example
 
 		// Assign triangles to mesh.
 		leMesh.triangles = triangles;

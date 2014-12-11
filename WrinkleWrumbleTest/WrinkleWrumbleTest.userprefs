@@ -1,8 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../Playbox/Assets/Scripts/Procedural Meshes/ShowNormals.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../Desktop/WrinkleWrumble/Project/Assets/_IMPORT/Oldman_Assets/Assets/Scripts/BasicAniController.cs">
     <Files>
-      <File FileName="../Playbox/Assets/Scripts/Procedural Meshes/ShowNormals.cs" Line="33" Column="43" />
+      <File FileName="../../Desktop/WrinkleWrumble/Project/Assets/_IMPORT/Oldman_Assets/Assets/Scripts/ItemPickup.cs" Line="30" Column="29" />
+      <File FileName="../../Desktop/WrinkleWrumble/Project/Assets/_IMPORT/Oldman_Assets/Assets/Scripts/BasicAniController.cs" Line="231" Column="19" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
