@@ -63,6 +63,8 @@
      <Compile Include="Assets\Scripts\Procedural Noise\ProceduralNoise.cs" />
      <Compile Include="Assets\Scripts\Procedural Particles\PushParticles.cs" />
      <Compile Include="Assets\Scripts\Procedural Particles\SliceParticles.cs" />
+     <Compile Include="Assets\Scripts\Procedural Terrains\MoveAndStick.cs" />
+     <Compile Include="Assets\Scripts\Procedural Terrains\ProcTerrains.cs" />
      <Compile Include="Assets\Scripts\Procedural Textures\ProceduralTexture.cs" />
      <Compile Include="Assets\Scripts\Procedural Textures\ProceduralTextureAssign.cs" />
      <Compile Include="Assets\Scripts\Procedural Textures\SetVertexColor.cs" />

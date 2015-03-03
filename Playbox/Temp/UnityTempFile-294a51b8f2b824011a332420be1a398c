@@ -1,0 +1,108 @@
+-debug
+-target:library
+-nowarn:0169
+-out:'Temp/Assembly-CSharp.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll'
+-r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll'
+-define:UNITY_4_6_0
+-define:UNITY_4_6
+-define:UNITY_WEBPLAYER
+-define:WEBPLUG
+-define:ENABLE_MICROPHONE
+-define:ENABLE_TEXTUREID_MAP
+-define:ENABLE_UNITYEVENTS
+-define:ENABLE_NEW_HIERARCHY 
+-define:ENABLE_AUDIO_FMOD
+-define:ENABLE_MONO
+-define:ENABLE_TERRAIN
+-define:ENABLE_SUBSTANCE
+-define:ENABLE_GENERICS
+-define:INCLUDE_WP8SUPPORT
+-define:ENABLE_MOVIES
+-define:ENABLE_WWW
+-define:ENABLE_IMAGEEFFECTS
+-define:ENABLE_4_6_FEATURES
+-define:INCLUDE_WP_BLUE_SUPPORT
+-define:ENABLE_WEBCAM
+-define:INCLUDE_METROSUPPORT
+-define:RENDER_SOFTWARE_CURSOR
+-define:ENABLE_NETWORK
+-define:ENABLE_PHYSICS
+-define:ENABLE_CACHING
+-define:ENABLE_CLOTH
+-define:ENABLE_2D_PHYSICS
+-define:ENABLE_SHADOWS
+-define:ENABLE_AUDIO
+-define:ENABLE_NAVMESH_CARVING
+-define:ENABLE_DUCK_TYPING
+-define:ENABLE_SINGLE_INSTANCE_BUILD_SETTING
+-define:ENABLE_PROFILER
+-define:UNITY_EDITOR
+-define:UNITY_EDITOR_OSX
+'Assets/Scripts/InsideOut.cs'
+'Assets/Scripts/Lists and Dictionaries/Dictionaries.cs'
+'Assets/Scripts/Lists and Dictionaries/HelperClass.cs'
+'Assets/Scripts/Lists and Dictionaries/Lists.cs'
+'Assets/Scripts/Other/Emitter.cs'
+'Assets/Scripts/Other/MovingPlatformSimple.cs'
+'Assets/Scripts/Other/RobotControllerScript.cs'
+'Assets/Scripts/Other/ScreenFade.cs'
+'Assets/Scripts/Other/SpongeScript.cs'
+'Assets/Scripts/Proc/ProcParticleSystem.cs'
+'Assets/Scripts/Proc/ProcTextures.cs'
+'Assets/Scripts/Procedural Meshes/ShowNormals.cs'
+'Assets/Scripts/Procedural Meshes/SimpleMakeMesh.cs'
+'Assets/Scripts/Procedural Meshes/SimplePlane.cs'
+'Assets/Scripts/Procedural Noise/ProceduralNoise.cs'
+'Assets/Scripts/Procedural Particles/PushParticles.cs'
+'Assets/Scripts/Procedural Particles/SliceParticles.cs'
+'Assets/Scripts/Procedural Terrains/MoveAndStick.cs'
+'Assets/Scripts/Procedural Terrains/ProcTerrains.cs'
+'Assets/Scripts/Procedural Textures/ProceduralTexture.cs'
+'Assets/Scripts/Procedural Textures/ProceduralTextureAssign.cs'
+'Assets/Scripts/Procedural Textures/SetVertexColor.cs'
+'Assets/libnoisedotnet-86856/LibNoise/Billow.cs'
+'Assets/libnoisedotnet-86856/LibNoise/Checkerboard.cs'
+'Assets/libnoisedotnet-86856/LibNoise/Constant.cs'
+'Assets/libnoisedotnet-86856/LibNoise/Cylinders.cs'
+'Assets/libnoisedotnet-86856/LibNoise/FastBillow.cs'
+'Assets/libnoisedotnet-86856/LibNoise/FastNoise.cs'
+'Assets/libnoisedotnet-86856/LibNoise/FastNoiseBasis.cs'
+'Assets/libnoisedotnet-86856/LibNoise/FastRidgedMultifractal.cs'
+'Assets/libnoisedotnet-86856/LibNoise/FastTurbulence.cs'
+'Assets/libnoisedotnet-86856/LibNoise/GradientNoiseBasis.cs'
+'Assets/libnoisedotnet-86856/LibNoise/IModule.cs'
+'Assets/libnoisedotnet-86856/LibNoise/Math.cs'
+'Assets/libnoisedotnet-86856/LibNoise/Models/Cylinder.cs'
+'Assets/libnoisedotnet-86856/LibNoise/Models/Line.cs'
+'Assets/libnoisedotnet-86856/LibNoise/Models/Plane.cs'
+'Assets/libnoisedotnet-86856/LibNoise/Models/Sphere.cs'
+'Assets/libnoisedotnet-86856/LibNoise/Modfiers/AbsoluteOutput.cs'
+'Assets/libnoisedotnet-86856/LibNoise/Modfiers/Add.cs'
+'Assets/libnoisedotnet-86856/LibNoise/Modfiers/BiasOutput.cs'
+'Assets/libnoisedotnet-86856/LibNoise/Modfiers/Blend.cs'
+'Assets/libnoisedotnet-86856/LibNoise/Modfiers/ClampOutput.cs'
+'Assets/libnoisedotnet-86856/LibNoise/Modfiers/CurveOutput.cs'
+'Assets/libnoisedotnet-86856/LibNoise/Modfiers/DisplaceInput.cs'
+'Assets/libnoisedotnet-86856/LibNoise/Modfiers/ExponentialOutput.cs'
+'Assets/libnoisedotnet-86856/LibNoise/Modfiers/InvertInput.cs'
+'Assets/libnoisedotnet-86856/LibNoise/Modfiers/InvertOutput.cs'
+'Assets/libnoisedotnet-86856/LibNoise/Modfiers/LargerOutput.cs'
+'Assets/libnoisedotnet-86856/LibNoise/Modfiers/Multiply.cs'
+'Assets/libnoisedotnet-86856/LibNoise/Modfiers/Power.cs'
+'Assets/libnoisedotnet-86856/LibNoise/Modfiers/RotateInput.cs'
+'Assets/libnoisedotnet-86856/LibNoise/Modfiers/ScaleBiasOutput.cs'
+'Assets/libnoisedotnet-86856/LibNoise/Modfiers/ScaleInput.cs'
+'Assets/libnoisedotnet-86856/LibNoise/Modfiers/ScaleOutput.cs'
+'Assets/libnoisedotnet-86856/LibNoise/Modfiers/Select.cs'
+'Assets/libnoisedotnet-86856/LibNoise/Modfiers/SmallerOutput.cs'
+'Assets/libnoisedotnet-86856/LibNoise/Modfiers/Terrace.cs'
+'Assets/libnoisedotnet-86856/LibNoise/Modfiers/TranslateInput.cs'
+'Assets/libnoisedotnet-86856/LibNoise/Perlin.cs'
+'Assets/libnoisedotnet-86856/LibNoise/Properties/AssemblyInfo.cs'
+'Assets/libnoisedotnet-86856/LibNoise/RidgedMultifractal.cs'
+'Assets/libnoisedotnet-86856/LibNoise/Spheres.cs'
+'Assets/libnoisedotnet-86856/LibNoise/Turbulence.cs'
+'Assets/libnoisedotnet-86856/LibNoise/ValueNoiseBasis.cs'
+'Assets/libnoisedotnet-86856/LibNoise/Voronoi.cs'
