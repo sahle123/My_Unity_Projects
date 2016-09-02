@@ -27,7 +27,7 @@ public class ScytheSwing : MonoBehaviour {
 			Instantiate (BlueSoul, theTrigger.transform.position, Quaternion.identity);
 
 			// To play different sound effects for soul upon death.
-			audio.PlayOneShot (RedSoulDeath[RedSoulSFXCount], 1f);
+			GetComponent<AudioSource>().PlayOneShot (RedSoulDeath[RedSoulSFXCount], 1f);
 			RedSoulSFXCount = (RedSoulSFXCount + 1) % ArraySize;
 			//Debug.Log ("I played: " + RedSoulDeath[RedSoulSFXCount].name);
 		}
@@ -42,7 +42,7 @@ public class ScytheSwing : MonoBehaviour {
 			Instantiate (BlueSoul, theTrigger.transform.position, Quaternion.identity);
 
 			// To play different sound effects for soul upon death.
-			audio.PlayOneShot (RedSoulDeath[RedSoulSFXCount], 1f);
+			GetComponent<AudioSource>().PlayOneShot (RedSoulDeath[RedSoulSFXCount], 1f);
 			RedSoulSFXCount = (RedSoulSFXCount + 1) % ArraySize;
 		}
 	}
@@ -52,15 +52,15 @@ public class ScytheSwing : MonoBehaviour {
 	{
 		if((Input.GetMouseButtonDown (0)) || (Input.GetKeyDown (KeyCode.V)))
 		{
-			if(!animation.isPlaying)
+			if(!GetComponent<Animation>().isPlaying)
 			{
-				animation.Play("Scythe_Animation 3");
-				audio.PlayOneShot(SoundFx, 0.5f);
+				GetComponent<Animation>().Play("Scythe_Animation 3");
+				GetComponent<AudioSource>().PlayOneShot(SoundFx, 0.5f);
 				//gameObject.GetComponent<BoxCollider>().enabled = true;
 				BoxComponent.enabled = true;
 			}
 		}
-		else if(!animation.isPlaying)
+		else if(!GetComponent<Animation>().isPlaying)
 		{
 			BoxComponent.enabled = false;
 			//gameObject.GetComponent<BoxCollider>().enabled = false;

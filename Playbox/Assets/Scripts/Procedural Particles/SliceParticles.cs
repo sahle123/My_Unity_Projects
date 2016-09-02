@@ -44,7 +44,7 @@ public class SliceParticles : MonoBehaviour {
 		Vector3 mousePos = Input.mousePosition;
 
 		// Project the mouse position and evelocity onto the plane of the particle system.
-		Ray mouseRay = camera.ScreenPointToRay (mousePos);
+		Ray mouseRay = GetComponent<Camera>().ScreenPointToRay (mousePos);
 		Plane plane = new Plane (transform.forward, ps.transform.position); // <- Don't really understand this.
 		float distance;
 		plane.Raycast (mouseRay, out distance);

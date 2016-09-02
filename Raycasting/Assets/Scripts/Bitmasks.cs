@@ -19,6 +19,6 @@ public class Bitmasks : MonoBehaviour {
 
 
 		// Camera culling. This will cull all objects in layer 8 (Box 1 layer).
-		camera.cullingMask = camera.cullingMask & ~(1 << LayerMask.NameToLayer ("Box 1"));
+		GetComponent<Camera>().cullingMask = GetComponent<Camera>().cullingMask & ~(1 << LayerMask.NameToLayer ("Box 1"));
 	}
 }

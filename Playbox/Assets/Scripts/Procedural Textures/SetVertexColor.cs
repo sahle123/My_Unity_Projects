@@ -26,7 +26,7 @@ public class SetVertexColor : MonoBehaviour {
 		{
 			Ray myRay = Camera.main.ScreenPointToRay (Input.mousePosition);
 			RaycastHit rayHit;
-			if(collider.Raycast (myRay, out rayHit, Camera.main.farClipPlane))
+			if(GetComponent<Collider>().Raycast (myRay, out rayHit, Camera.main.farClipPlane))
 			{
 				Vector3 hitPoint = rayHit.point;
 

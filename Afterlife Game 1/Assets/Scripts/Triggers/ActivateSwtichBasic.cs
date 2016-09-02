@@ -12,7 +12,7 @@ public class ActivateSwtichBasic : MonoBehaviour {
 		if((theTrigger.gameObject.tag == "The_Player") && !(is_opening))
 		{
 			is_opening = true;
-			audio.PlayOneShot(SoundFx, 1f);
+			GetComponent<AudioSource>().PlayOneShot(SoundFx, 1f);
 
 			if(is_opening)
 				transform.FindChild ("Rotation_Point").GetComponent<RotatingHandle>().enabled = true;

@@ -11,7 +11,7 @@ public class DeathHandler : MonoBehaviour {
 
 	void Start()
 	{
-		audio.PlayOneShot(DeathFx, 0.23f);
+		GetComponent<AudioSource>().PlayOneShot(DeathFx, 0.23f);
 		sWidth = (Screen.width / 2);
 		sHeight = (Screen.height / 2);
 	}

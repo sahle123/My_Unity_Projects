@@ -291,10 +291,10 @@ public class GUI_Finished : MonoBehaviour {
 			isRenderScythe.enabled = true;
 
 			// Look music and play background music.
-			audio.loop = true;
-			audio.volume = 0.75f;
-			audio.clip = BackgroundMusic;
-			audio.Play();
+			GetComponent<AudioSource>().loop = true;
+			GetComponent<AudioSource>().volume = 0.75f;
+			GetComponent<AudioSource>().clip = BackgroundMusic;
+			GetComponent<AudioSource>().Play();
 		}
 
 		/*

@@ -18,17 +18,17 @@ public class VictoryPotHandler : MonoBehaviour {
 		}
 		else if ((theTrigger.gameObject.tag == "The_Player")&&(!waitOnSound))
 		{
-			audio.PlayOneShot (SoundFX, 0.4f);
+			GetComponent<AudioSource>().PlayOneShot (SoundFX, 0.4f);
 			waitOnSound = true;
 		}
 	}
 
 	void Update()
 	{
-		if(!audio.isPlaying)
+		if(!GetComponent<AudioSource>().isPlaying)
 		{
-			audio.clip = Milfanito;
-			audio.Play ();
+			GetComponent<AudioSource>().clip = Milfanito;
+			GetComponent<AudioSource>().Play ();
 		}
 		if(elapsedTime < timerOffset)
 		{

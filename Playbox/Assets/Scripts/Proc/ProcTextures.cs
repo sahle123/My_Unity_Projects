@@ -19,7 +19,7 @@ public class ProcTextures : MonoBehaviour {
 		tex.SetPixels (color);
 		tex.Apply ();
 
-		renderer.material.mainTexture = tex;
+		GetComponent<Renderer>().material.mainTexture = tex;
 	}
 
 	void Update()

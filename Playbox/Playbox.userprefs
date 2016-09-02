@@ -1,24 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Procedural Terrains/ProcTerrains.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../Afterlife Game 1/Assets/Scripts/The_Player Code/GUI_Finished.cs">
     <Files>
-      <File FileName="Assets/Scripts/Procedural Terrains/ProcTerrains.cs" Line="9" Column="26" />
-      <File FileName="Assets/Scripts/Procedural Terrains/MoveAndStick.cs" Line="17" Column="3" />
+      <File FileName="../Afterlife Game 1/Assets/Scripts/The_Player Code/GUI_Finished.cs" Line="105" Column="3" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="Assembly-CSharp" expanded="True">
-            <Node name="Scripts" expanded="True">
-              <Node name="Procedural Terrains" expanded="True">
-                <Node name="ProcTerrains.cs" selected="True" />
-              </Node>
-              <Node name="Procedural Textures" expanded="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

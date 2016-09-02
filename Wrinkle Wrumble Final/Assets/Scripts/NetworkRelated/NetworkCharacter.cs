@@ -26,11 +26,11 @@ public class NetworkCharacter : Photon.MonoBehaviour {
 		}
 		else {
 
-			rigidbody.position = Vector3.Lerp(rigidbody.position, realPosition2, 0.1f);
-			rigidbody.velocity = Vector3.Lerp(rigidbody.velocity, rigidbodyVel, 0.1f);
-			rigidbody.rotation = Quaternion.Lerp(rigidbody.rotation, realRotation2, 0.1f);
+			GetComponent<Rigidbody>().position = Vector3.Lerp(GetComponent<Rigidbody>().position, realPosition2, 0.1f);
+			GetComponent<Rigidbody>().velocity = Vector3.Lerp(GetComponent<Rigidbody>().velocity, rigidbodyVel, 0.1f);
+			GetComponent<Rigidbody>().rotation = Quaternion.Lerp(GetComponent<Rigidbody>().rotation, realRotation2, 0.1f);
 			
-			rigidbody.angularVelocity = Vector3.Lerp(rigidbody.angularVelocity, rigidbodyAngVel, 0.1f);
+			GetComponent<Rigidbody>().angularVelocity = Vector3.Lerp(GetComponent<Rigidbody>().angularVelocity, rigidbodyAngVel, 0.1f);
 		}
 	}
 
@@ -47,10 +47,10 @@ public class NetworkCharacter : Photon.MonoBehaviour {
 			stream.SendNext(anim.GetBool("Throw"));
 			stream.SendNext(anim.GetBool("Push"));
 
-			stream.SendNext(rigidbody.position);
-			stream.SendNext(rigidbody.rotation);
-			stream.SendNext(rigidbody.velocity);
-			stream.SendNext(rigidbody.angularVelocity);
+			stream.SendNext(GetComponent<Rigidbody>().position);
+			stream.SendNext(GetComponent<Rigidbody>().rotation);
+			stream.SendNext(GetComponent<Rigidbody>().velocity);
+			stream.SendNext(GetComponent<Rigidbody>().angularVelocity);
 		}
 		else {
 			// This is someone else's player. We need to receive their position (as of a few
@@ -73,10 +73,10 @@ public class NetworkCharacter : Photon.MonoBehaviour {
 			
 			if(gotFirstUpdate == false) {
 
-				rigidbody.position = realPosition2;
-				rigidbody.rotation = realRotation2;
-				rigidbody.velocity = rigidbodyVel;
-				rigidbody.velocity = rigidbodyAngVel;
+				GetComponent<Rigidbody>().position = realPosition2;
+				GetComponent<Rigidbody>().rotation = realRotation2;
+				GetComponent<Rigidbody>().velocity = rigidbodyVel;
+				GetComponent<Rigidbody>().velocity = rigidbodyAngVel;
 				gotFirstUpdate = true;
 			}
 		}

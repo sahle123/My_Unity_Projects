@@ -13,7 +13,7 @@ public class ActivateSwitch : MonoBehaviour {
 		if((theTrigger.gameObject.tag == "The_Player") && !(is_opening))
 		{
 			is_opening = true;
-			audio.PlayOneShot(SoundFx, 1f);
+			GetComponent<AudioSource>().PlayOneShot(SoundFx, 1f);
 
 			if(is_opening)
 			{

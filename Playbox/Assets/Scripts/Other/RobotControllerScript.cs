@@ -34,12 +34,12 @@ public class RobotControllerScript : MonoBehaviour {
 		// Change the speed value in the animator parameter "Speed"
 		anim_vals.SetFloat ("Speed", Mathf.Abs (theMovement));
 		// Change the vSpeed value in the animator parameter "vSpeed"
-		anim_vals.SetFloat ("vSpeed", rigidbody2D.velocity.y);
+		anim_vals.SetFloat ("vSpeed", GetComponent<Rigidbody2D>().velocity.y);
 
 		if(grounded)
 		{
 			// Movement for character
-			rigidbody2D.velocity = new Vector2 (theMovement * maxSpeed, rigidbody2D.velocity.y);
+			GetComponent<Rigidbody2D>().velocity = new Vector2 (theMovement * maxSpeed, GetComponent<Rigidbody2D>().velocity.y);
 		}
 
 		// Algorithm for handling whether or not the player is moving left or right.
@@ -58,16 +58,16 @@ public class RobotControllerScript : MonoBehaviour {
 		{	
 			anim_vals.SetBool ("Ground", false);
 			grounded = false;
-			rigidbody2D.AddForce (new Vector2(0, jumpForce));
+			GetComponent<Rigidbody2D>().AddForce (new Vector2(0, jumpForce));
 		}
 
 		// Logic for jumping left or right with full velocity. Makes the jumps nicer.
 		if((grounded) && ((Input.GetAxis ("Horizontal")*maxSpeed) < maxSpeed/2))
 		{
 			if(Input.GetAxis("Horizontal") > 0)
-				rigidbody2D.velocity = new Vector2 (maxSpeed/2, rigidbody2D.velocity.y);
+				GetComponent<Rigidbody2D>().velocity = new Vector2 (maxSpeed/2, GetComponent<Rigidbody2D>().velocity.y);
 			else if (Input.GetAxis("Horizontal") < 0)
-				rigidbody2D.velocity = new Vector2 (-maxSpeed/2, rigidbody2D.velocity.y);
+				GetComponent<Rigidbody2D>().velocity = new Vector2 (-maxSpeed/2, GetComponent<Rigidbody2D>().velocity.y);
 		}
 
 	}

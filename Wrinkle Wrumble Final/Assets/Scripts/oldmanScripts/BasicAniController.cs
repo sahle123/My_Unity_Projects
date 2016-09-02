@@ -79,8 +79,8 @@ public class BasicAniController : Photon.MonoBehaviour {
 	{
 
 		animation_vals = GetComponent<Animator>();
-		audio.clip = RunningSFX;
-		audio.volume = 0.1f;
+		GetComponent<AudioSource>().clip = RunningSFX;
+		GetComponent<AudioSource>().volume = 0.1f;
 
 		isDead = false;
 
@@ -133,7 +133,7 @@ public class BasicAniController : Photon.MonoBehaviour {
 		                                                         runSpeed * leMovement);
 		//Debug.Log ("Relative movement: " + relativeMovement);
 
-		animation_vals.SetFloat ("vSpeed", rigidbody.velocity.y);
+		animation_vals.SetFloat ("vSpeed", GetComponent<Rigidbody>().velocity.y);
 		
 		// Do run animation?
 		if(grounded)
@@ -156,7 +156,7 @@ public class BasicAniController : Photon.MonoBehaviour {
 		// XZ movement
 		if(((leMovement > 0) || (leStrafe != 0)) && (!delayJump))
 		{
-			rigidbody.MovePosition (rigidbody.transform.position + relativeMovement * Time.fixedDeltaTime);
+			GetComponent<Rigidbody>().MovePosition (GetComponent<Rigidbody>().transform.position + relativeMovement * Time.fixedDeltaTime);
 			//CheckFootSteps();
 		}
 
@@ -177,7 +177,7 @@ public class BasicAniController : Photon.MonoBehaviour {
 			objectName = objectName.Replace("(Clone)", "");
 			GameObject newObject = PhotonNetwork.Instantiate(objectName, ThrowPosition.position, ThrowPosition.rotation, 0) as GameObject;
 			newObject.transform.localScale = new Vector3(1f, 1f, 1f);
-			newObject.rigidbody.AddRelativeForce (new Vector3(0.0f,0.3f,1.0f) * ThrowForce);
+			newObject.GetComponent<Rigidbody>().AddRelativeForce (new Vector3(0.0f,0.3f,1.0f) * ThrowForce);
 			GetComponent<PhotonView>().RPC("playSound", PhotonTargets.All, 1);
 		}
 
@@ -230,7 +230,7 @@ public class BasicAniController : Photon.MonoBehaviour {
 			if(grounded && Input.GetButtonDown("Jump"))
 			{
 				grounded = false;
-				rigidbody.AddForce(new Vector3(0f, jumpForce, 0f));
+				GetComponent<Rigidbody>().AddForce(new Vector3(0f, jumpForce, 0f));
 				delayJump = true;
 
 				if(isGenderMale)
@@ -258,7 +258,7 @@ public class BasicAniController : Photon.MonoBehaviour {
 	void OnHitByObject()
 	{
 		PainNumber = ((PainNumber + 1) % PainSFX.Length);
-		audio.PlayOneShot(PainSFX[PainNumber]);
+		GetComponent<AudioSource>().PlayOneShot(PainSFX[PainNumber]);
 	}
 
 	//
@@ -271,7 +271,7 @@ public class BasicAniController : Photon.MonoBehaviour {
 			if((Input.GetButton ("Vertical2")) || 
 			   Input.GetButton ("Strafe"))
 			{
-				if(!audio.isPlaying)
+				if(!GetComponent<AudioSource>().isPlaying)
 					GetComponent<PhotonView>().RPC("playSoundFootsteps", PhotonTargets.All, true);
 			}
 			else
@@ -285,7 +285,7 @@ public class BasicAniController : Photon.MonoBehaviour {
 	{
 
 		if(theTrigger.gameObject.tag == "Throwable" && 
-		   theTrigger.rigidbody.velocity.magnitude < 1.0f && 
+		   theTrigger.GetComponent<Rigidbody>().velocity.magnitude < 1.0f && 
 		   !(hasCube) &&
 		   Input.GetKey(KeyCode.J)
 		   )
@@ -300,7 +300,7 @@ public class BasicAniController : Photon.MonoBehaviour {
 	void OnTriggerStay(Collider other) {
 
 		if(other.gameObject.tag == "Throwable" && 
-		   other.rigidbody.velocity.magnitude < 1.0f && 
+		   other.GetComponent<Rigidbody>().velocity.magnitude < 1.0f && 
 		   !(hasCube) &&
 		   Input.GetKey(KeyCode.J)
 		   )

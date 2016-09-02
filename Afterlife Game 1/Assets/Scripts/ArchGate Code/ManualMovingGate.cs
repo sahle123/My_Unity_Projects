@@ -13,7 +13,7 @@ public class ManualMovingGate : MonoBehaviour {
 
 	void Start()
 	{
-		audio.PlayOneShot (SoundFx, 1f);
+		GetComponent<AudioSource>().PlayOneShot (SoundFx, 1f);
 	}
 
 	void FixedUpdate()

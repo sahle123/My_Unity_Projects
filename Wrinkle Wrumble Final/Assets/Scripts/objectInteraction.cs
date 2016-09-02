@@ -12,7 +12,7 @@ public class objectInteraction : MonoBehaviour {
 	
 	void OnTriggerStay(Collider other) {
 		if (push && (other.gameObject.tag == "Pushable")) {
-				if (other.rigidbody != null)
+				if (other.GetComponent<Rigidbody>() != null)
 				{
 					Debug.Log ("Pushing Object: " + other.gameObject.name);
 					if(!waitActive){
@@ -28,7 +28,7 @@ public class objectInteraction : MonoBehaviour {
 				objectName = objectName.Replace("(Clone)", "");
 				GameObject newObject = PhotonNetwork.Instantiate(objectName, objectPosition, objectRotation, 0) as GameObject;
 				newObject.transform.localScale = new Vector3(1f, 1f, 1f);
-				newObject.rigidbody.AddForce(new Vector3(other.transform.position.x - transform.parent.position.x, 0.0f, other.transform.position.z - transform.parent.position.z).normalized * pushPower);
+				newObject.GetComponent<Rigidbody>().AddForce(new Vector3(other.transform.position.x - transform.parent.position.x, 0.0f, other.transform.position.z - transform.parent.position.z).normalized * pushPower);
 
 				}
 		}

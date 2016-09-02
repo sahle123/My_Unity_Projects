@@ -24,7 +24,7 @@ public class NetworkVoiceBox : MonoBehaviour {
 	{
 
 		//Debug.Log("Play sound");
-		this.audio.PlayOneShot (SFX[soundIndex]);
+		this.GetComponent<AudioSource>().PlayOneShot (SFX[soundIndex]);
 	}
 
 	[RPC]
@@ -32,8 +32,8 @@ public class NetworkVoiceBox : MonoBehaviour {
 	{
 
 		//Debug.Log("Play sound footsteps");
-		audio.clip = SFX[2];
-		if(play) audio.Play ();
-		else audio.Pause();
+		GetComponent<AudioSource>().clip = SFX[2];
+		if(play) GetComponent<AudioSource>().Play ();
+		else GetComponent<AudioSource>().Pause();
 	}
 }

@@ -13,7 +13,7 @@ public class MainMenu_Controller : MonoBehaviour {
 	{
 		if(!startTimeCount)
 		{
-			audio.PlayOneShot (SoundFx, 0.5f);
+			GetComponent<AudioSource>().PlayOneShot (SoundFx, 0.5f);
 			startTimeCount = true;
 		}
 	}

@@ -10,7 +10,7 @@ public class SpongeScript : MonoBehaviour {
 
 	void Start () 
 	{
-		rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, -StartSpeed);
+		GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, -StartSpeed);
 		etime = 0f;
 	}
 

@@ -43,20 +43,20 @@ public class healthBarUpdate : MonoBehaviour {
 		//if player triggers fire object and health is greater than 0
 		if (!InCharacterCollider && other.gameObject.tag == "Pushable") 
 		{
-			if (this.healthBarSlider.value > 0 && other.rigidbody.velocity.magnitude >= pushThreshold //&& !InCharacterCollider
+			if (this.healthBarSlider.value > 0 && other.GetComponent<Rigidbody>().velocity.magnitude >= pushThreshold //&& !InCharacterCollider
 			    )
 			{
-				Debug.Log ("You got slammed by " + other.gameObject.name + " moving at " + Vector3.Magnitude (other.rigidbody.velocity));
+				Debug.Log ("You got slammed by " + other.gameObject.name + " moving at " + Vector3.Magnitude (other.GetComponent<Rigidbody>().velocity));
 				basicAniController.inPain = true;
-				GetComponentInParent<PhotonView>().RPC ("TakeDamage", PhotonTargets.All, (int) Mathf.Round(Vector3.Magnitude (other.rigidbody.velocity) * 20f)); 
+				GetComponentInParent<PhotonView>().RPC ("TakeDamage", PhotonTargets.All, (int) Mathf.Round(Vector3.Magnitude (other.GetComponent<Rigidbody>().velocity) * 20f)); 
 			}
 		} 
-		else if (other.gameObject.tag == "Throwable" && other.rigidbody.velocity.magnitude >= pushThreshold) 
+		else if (other.gameObject.tag == "Throwable" && other.GetComponent<Rigidbody>().velocity.magnitude >= pushThreshold) 
 		{
-			Debug.Log ("You got hit by " + other.gameObject.name + " moving at " + Vector3.Magnitude (other.rigidbody.velocity));
-			healthBarSlider.value -= Vector3.Magnitude (other.rigidbody.velocity) / 100;
+			Debug.Log ("You got hit by " + other.gameObject.name + " moving at " + Vector3.Magnitude (other.GetComponent<Rigidbody>().velocity));
+			healthBarSlider.value -= Vector3.Magnitude (other.GetComponent<Rigidbody>().velocity) / 100;
 			basicAniController.inPain = true;
-			GetComponentInParent<PhotonView>().RPC ("TakeDamage", PhotonTargets.All, (int) Mathf.Round(Vector3.Magnitude (other.rigidbody.velocity) * 6f));
+			GetComponentInParent<PhotonView>().RPC ("TakeDamage", PhotonTargets.All, (int) Mathf.Round(Vector3.Magnitude (other.GetComponent<Rigidbody>().velocity) * 6f));
 		}
 		if (healthBarSlider.value < 0.01) 
 		{
